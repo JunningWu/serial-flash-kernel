@@ -75,14 +75,14 @@ int main( int argc, char* argv[] )
   Uint32 EntryAddr;
   WatchDogDisable();
   //while(1);
-  GPIO_INIT();
-  
-  for(i=0;i<10;i++){
-	  GpioDataRegs.GPACLEAR.bit.GPIO7 = 1;
-	  for(j=0;j<12000;j++);
-	  GpioDataRegs.GPASET.bit.GPIO7 = 1;
-	  for(j=0;j<12000;j++);
-  }
+//  GPIO_INIT();
+//
+//  for(i=0;i<10;i++){
+//	  GpioDataRegs.GPACLEAR.bit.GPIO7 = 1;
+//	  for(j=0;j<12000;j++);
+//	  GpioDataRegs.GPASET.bit.GPIO7 = 1;
+//	  for(j=0;j<12000;j++);
+//  }
 
   EALLOW;
   P_SysCtrlRegs->PCLKCR0.bit.SCIAENCLK=0;

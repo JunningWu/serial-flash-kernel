@@ -237,14 +237,14 @@ SCIA_GetOnlyWordData()
    // Fetch the LSB and verify back to the host
    while(P_SciaRegs->SCILSR.bit.DR != 1) { } 
    wordData =  (Uint16)P_SciaRegs->SCIRBR_SCIDLL_SCITHR.SCIRBR_bits.RBR;
-   while(0 == P_SciaRegs->SCILSR.bit.THRE);
+   //while(0 == P_SciaRegs->SCILSR.bit.THRE);
 	//���ݷ��ͼĴ���
    //P_SciaRegs->SCIRBR_SCIDLL_SCITHR.SCITHR_bits.THR = wordData;
 
    // Fetch the MSB and verify back to the host
    while(P_SciaRegs->SCILSR.bit.DR != 1) { }  
    byteData =  (Uint16)P_SciaRegs->SCIRBR_SCIDLL_SCITHR.SCIRBR_bits.RBR;
-   while(0 == P_SciaRegs->SCILSR.bit.THRE);
+   //while(0 == P_SciaRegs->SCILSR.bit.THRE);
    //P_SciaRegs->SCIRBR_SCIDLL_SCITHR.SCITHR_bits.THR = byteData;
    
    checksum += wordData + byteData;
